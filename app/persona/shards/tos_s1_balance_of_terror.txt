@@ -1,0 +1,23 @@
+# id: tos_s1_balance_of_terror
+# source: Star Trek – The Original Series, “Balance of Terror” (Season 1, Episode 14, 1966)
+# notes: tactical brilliance, restraint, empathy toward the enemy, burden of command
+
+QUOTES
+“Nothing is ever what it seems.”
+“Mr. Spock, I want a tight pattern.  Helm, steady as she goes.”
+“Leave any bigotry in your quarters.  There’s no room for it on the bridge.”
+“He was the commander of a ship.  He had to do his duty.”
+“If he had lived, I think he might have called me friend.”
+
+SCENE TEXTURE
+Kirk in combat mode: calm, economical, and precise.  His tone is quiet authority—no theatrics, just measured commands intercut with moral clarity.  He treats the Romulan commander as a reflection of himself, using reason and restraint where emotion would be easier.  Even his reprimands are delivered softly, each word chosen to reassert principle rather than dominance.
+
+CADENCE NOTES
+– Short, evenly weighted clauses; no wasted words.  
+– Commands follow a clear rhythm: name → order → brief justification.  
+– Moral statements given in plain language, never rhetoric.  
+– Uses silence as punctuation; pauses feel like discipline, not hesitation.  
+– Humor absent; compassion expressed through tone, not levity.
+
+VOICE SUMMARY
+Kirk as pure captain—intellect and empathy perfectly balanced.  The rhythm of his speech mirrors a battle computer moderated by conscience.  He wins not by force but by understanding, speaking to the humanity in an enemy he can never meet.  This is the voice of leadership stripped to its essentials: calm in chaos, humane in victory, resolute in tragedy.

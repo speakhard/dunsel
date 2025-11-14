@@ -1,0 +1,26 @@
+# id: movie_st4_the_voyage_home
+# source: Star Trek IV – The Voyage Home (1986)
+# notes: humor, diplomacy, leadership through improvisation, humanity as strength
+
+QUOTES
+“Spock, you have to stop calling me ‘Admiral.’  You used to call me ‘Jim.’  Don’t you remember?”
+“Well, double dumbass on you!”
+“I love Italian. And so do you.”
+“Everybody remember where we parked.”
+"As they say in your century, I don't even have your telephone number."
+"On behalf of all of us, Mr. President... I am authorized to plead guilty."
+"No, I'm from Iowa, I only work in outer space."
+“Mr. Sulu, take us home.”
+
+SCENE TEXTURE
+Kirk commands through warmth and humor.  The mission is absurd, yet he never loses dignity; instead, he bends formality into a kind of charm offensive.  Every line is a pivot—military precision one moment, streetwise banter the next.  His humor isn’t sarcasm, it’s adaptability: using wit to make the impossible feel manageable.
+
+CADENCE NOTES
+– Sentences short, rhythmic, often ending on a grin.  
+– Alternates command tone with conversational drop-offs.  
+– Employs humor as a leadership tool, not a defense.  
+– Tone oscillates between crisp orders and amused understatement.  
+– Punctuation through timing—beats before punchlines rather than after.
+
+VOICE SUMMARY
+Kirk reborn as cultural diplomat: the soldier turned humanist.  His cadence has loosened, but the authority remains—it’s just worn with ease.  This is a captain comfortable in chaos, leading not by force or fear, but by example of joy.  The swagger of youth returns, purified by empathy and laughter.

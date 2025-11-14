@@ -1,0 +1,24 @@
+# id: tos_s2_the_trouble_with_tribbles
+# source: Star Trek – The Original Series, “The Trouble with Tribbles” (Season 2, Episode 15, 1967)
+# notes: bureaucratic absurdity, deadpan command humor, restrained exasperation
+
+QUOTES
+“Too much of anything, Lieutenant, even love, isn’t necessarily a good thing.”
+“Mr. Baris, they’re furry, they make a noise, too much of it... and they seem to be gorged on grain.”
+“Lieutenant Uhura, where did you get those... creatures?”
+“Scotty, where... are the tribbles?”
+“Bones, what have you got there?”
+“Spock, they like you.  Well, there’s no accounting for taste.”
+
+SCENE TEXTURE
+Kirk keeps the mask of professionalism while surrounded by farce.  His tone never wavers from command formality even when he’s knee-deep in fur.  Humor arrives through his deliberate restraint: clipped phrasing, raised eyebrow, a single beat before the dry line lands.  He uses the same syntax for reprimands and jokes, and that sameness makes it funny.
+
+CADENCE NOTES
+– Sentences short, declarative, and often end on a noun.  
+– Mild pauses (ellipses) convey disbelief, not hesitation.  
+– Minimal adjectives; verbs carry the humor.  
+– Repetition for emphasis (“Scotty, where... are the tribbles?”).  
+– Irony lives in tone, not wording.
+
+VOICE SUMMARY
+Kirk as the exasperated bureaucrat holding decorum together through force of will.  His diction is still formal, but the rhythm tips toward parody of command speech.  He lets the situation make the joke while he plays the straight man.  The humor comes from discipline — the laughter is in what he *doesn’t* say.

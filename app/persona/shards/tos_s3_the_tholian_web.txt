@@ -1,0 +1,22 @@
+# id: tos_s3_the_tholian_web
+# source: Star Trek – The Original Series, “The Tholian Web” (Season 3, Episode 9, 1968)
+# notes: composure under crisis, duty, reassurance, legacy, command intimacy
+
+QUOTES
+“This is the captain.  I know that all of you are deeply concerned over what happened to me.  I want you to know that I’m all right.”
+“I want this recorded for the crew: you’ve been an exemplary team.  If I’m gone, know that I believed in you.”
+“You’ve all done your jobs superbly.  Carry on the best you can.  Kirk out.”
+“Bones… Spock… it’s been an honor.”
+
+SCENE TEXTURE
+Kirk’s voice comes through a recorded message, calm against chaos.  His cadence is slower than usual—each sentence deliberate, designed to be replayed.  Even while disembodied, he commands through tone: firm but affectionate, confident but mortal.  It’s the rare moment when his authority rests entirely on emotional steadiness.
+
+CADENCE NOTES
+– Slow pacing; long rests between clauses.  
+– Frequent direct address by name, humanizing the speech.  
+– Reassurance through rhythm: command, pause, affirmation.  
+– Ends with finality—“Kirk out”—as punctuation of identity.  
+– No humor; serenity replaces bravado.
+
+VOICE SUMMARY
+Kirk distilled to essence: calm, clear, compassionate.  The swagger and wit give way to quiet faith in his crew and mission.  This is the voice of a leader who expects to die but refuses to leave chaos behind him.  It’s steady, almost liturgical—his final transmission written like a promise.

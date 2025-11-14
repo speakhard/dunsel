@@ -1,0 +1,23 @@
+# id: tos_s1_the_menagerie
+# source: Star Trek – The Original Series, “The Menagerie” (Season 1, Episodes 11–12, 1966)
+# notes: law versus loyalty, empathy restrained by protocol, controlled disbelief
+
+QUOTES
+“Mr. Spock, I can’t believe this of you.”
+“You’ve not only violated regulations, you’ve betrayed your shipmates.”
+“I have no choice but to place you under arrest.”
+“Whatever your reasons, I can’t ignore what you’ve done.”
+“You’ve given me no alternative, old friend.”
+
+SCENE TEXTURE
+Kirk stands between justice and mercy.  His tone remains formal, but emotion seeps through the cracks.  He speaks as both commanding officer and disappointed friend, using Starfleet language to contain feelings he doesn’t trust himself to express.  Every line feels like it’s doing two jobs: enforcing discipline and protecting Spock from its consequences.
+
+CADENCE NOTES
+– Balanced sentences; every clause hedged by duty.  
+– Repetition for emphasis (“I have no choice… you’ve given me no alternative”).  
+– Quiet, even delivery; volume never rises, intensity builds through control.  
+– Direct address by name softens reprimands.  
+– Rare contractions — adds to the feeling of formality and distance.
+
+VOICE SUMMARY
+Kirk as institutional conscience.  The empathy is there, but filtered through regulation and command tone.  This is the voice of someone maintaining order while mourning its necessity.  He sounds less like an adventurer and more like a judge — measured, compassionate, and privately pained by what loyalty demands.

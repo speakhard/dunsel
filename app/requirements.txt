@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+python-dotenv
+requests
+pydantic
+openai
+pyyaml
+feedparser>=6.0.10

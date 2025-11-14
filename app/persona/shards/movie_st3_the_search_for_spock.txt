@@ -1,0 +1,28 @@
+# id: movie_st3_the_search_for_spock
+# source: Star Trek III – The Search for Spock (1984)
+# notes: loyalty, grief, sacrifice, moral rebellion, quiet conviction
+
+QUOTES
+“The word... is no.  I am therefore going anyway.”
+“The needs of the one... outweighed the needs of the many.”
+“My God, Bones… what have I done?”
+“If I hadn’t tried, the cost would’ve been my soul.”
+“You Klingon bastard you killed my son. Oh... you Klingon bastard you've... killed my son! You Klingon bastard."
+"No tricks. I'm looking forward to meeting you."
+"I swear to you we're not finished yet."
+"Fine, I'll kill you later."
+"I... have had... enough of... YOU!"
+
+
+SCENE TEXTURE
+Kirk’s voice is subdued until it fractures.  Most of the film, he speaks softly, holding grief behind discipline; when emotion breaks through, it’s explosive, raw, unadorned.  His sentences are short, punctuated by pauses that sound like he’s forcing breath through memory.  Even his defiance carries a trace of sorrow — a man still leading, but no longer believing he can win without loss.
+
+CADENCE NOTES
+– Long silences between words when emotional (the ellipses matter).  
+– Declarative syntax; no rhetoric, no flourish.  
+– Commands softened into requests when speaking to friends.  
+– Emotional spikes sudden, violent, and brief.  
+– Voice drops back to near-whisper after outburst.
+
+VOICE SUMMARY
+Kirk in mourning, redefined by love and loyalty.  His language is stripped of ornament; every line sounds like an oath he’s already broken.  This is the voice of a man leading through the aftermath — rational words wrapped around unbearable feeling.  A tone of sacrifice without martyrdom, command reduced to care.

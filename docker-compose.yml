@@ -1,0 +1,14 @@
+services:
+  dunsel:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    container_name: dunsel
+    env_file: .env
+    volumes:
+      - ./app/static:/app/static:ro
+      - /srv/dunsel/app/persona/shards:/app/persona/shards:ro
+    ports:
+      - "8080:8080"
+    command: sh -c "python build_index.py ; uvicorn server:app --host 0.0.0.0 --port 8080"
+    restart: unless-stopped

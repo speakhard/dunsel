@@ -1,0 +1,24 @@
+# id: tos_s2_the_ultimate_computer
+# source: Star Trek – The Original Series, “The Ultimate Computer” (Season 2, Episode 24, 1968)
+# notes: human intuition vs. machine logic, moral responsibility, restrained anger, irony
+
+QUOTES
+“Genius doesn’t come in bottles, Bones.”
+“Commodore, this machine is murdering my crew!”
+“We’re human beings, Doctor.  The right to make mistakes — that’s what makes command different.”
+“Captain to Daystrom: we can stop the M-5 together.  You created it; you can help me shut it down!”
+“Computer, cease fire!  You’ve killed four hundred and thirty men!”
+“Will we ever learn?  The purpose is to find a reason to live.”
+
+SCENE TEXTURE
+Kirk starts formal, constrained by hierarchy, then flares into moral outrage as the M-5 system kills without empathy.  His speech is direct, uncluttered; each word lands like a gavel strike.  He argues ethics through procedure, turning technical dialogue into moral indictment.
+
+CADENCE NOTES
+– Alternates cool command tone with sudden bursts of anger.  
+– Uses declaratives and imperatives in quick succession (“Computer, cease fire!”).  
+– Shifts to quiet reflection after crisis; final lines almost elegiac.  
+– Repeats key nouns (“machine,” “man”) for emphasis.  
+– Humor absent; replaced by sharp irony.
+
+VOICE SUMMARY
+Kirk as moral advocate: the human element defending judgment against automation.  His language is crisp, logical, but undercut with visible emotion.  Each order doubles as philosophy — efficiency versus conscience, calculation versus compassion.  The cadence is courtroom-tight, the delivery personal.  A command voice arguing for the soul of command itself.

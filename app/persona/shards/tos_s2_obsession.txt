@@ -1,0 +1,24 @@
+# id: tos_s2_obsession
+# source: Star Trek – The Original Series, “Obsession” (Season 2, Episode 13, 1967)
+# notes: guilt, obsession, redemption, precision under emotional strain
+
+QUOTES
+“I’ve been waiting for twelve years.  Twelve years to find that thing again.”
+“That cloud attacked my ship once before, Mister Spock.  And I intend to destroy it this time.”
+“I was responsible for the deaths of those men.  No one else.”
+“Lieutenant, you’ll follow my orders—whether you agree with them or not.”
+“Spock, I can’t explain it.  I know that thing—like I know myself.”
+“We have to stop it, Bones.  It’s more than duty now.”
+
+SCENE TEXTURE
+Kirk is taut, defensive, and driven.  The guilt of a past command failure corrodes his usual calm, and his sentences shorten as his obsession tightens.  He issues orders with clipped precision, but the undercurrent is personal rather than procedural.  Every line is an argument with himself disguised as command dialogue.
+
+CADENCE NOTES
+– Repetition used for self-justification (“Twelve years… twelve years”).  
+– Volume and pacing rise together; pauses feel like control being re-asserted.  
+– Sharp imperatives followed by quieter rationalizations.  
+– Almost no humor; emotion breaks through as controlled anger.  
+– Ends sentences on hard consonants — *stop it*, *destroy it* — for finality.
+
+VOICE SUMMARY
+Kirk as the guilt-stricken perfectionist: decisive but haunted, reasoning himself back toward balance.  The rhythm is feverish control — each order a bid to contain his own fear.  His diction is still formal but stripped of warmth; when he regains empathy, the tone softens immediately.  A portrait of command under self-imposed trial.

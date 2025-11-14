@@ -1,0 +1,11 @@
+body{font-family:system-ui;margin:0;background:#0b0f1a;color:#e6e6e6}
+header{padding:14px 16px;background:#111a2b;border-bottom:1px solid #1f2a44}
+main{max-width:820px;margin:24px auto;padding:0 16px}
+.chat{background:#0f1626;border:1px solid #1f2a44;border-radius:10px;padding:12px;min-height:300px}
+.msg{padding:10px 12px;margin:8px 0;border-radius:8px}
+.user{background:#1b2340}
+.kirk{background:#151d33}
+textarea{background:#0d1426;color:#e6e6e6;border:1px solid #1f2a44;border-radius:8px;padding:10px;height:90px;width:100%}
+.row{display:flex;gap:10px;align-items:center;margin:8px 0}
+button{background:#2b66ff;border:none;color:white;padding:10px 14px;border-radius:8px;cursor:pointer}
+input[type=text]{flex:1;background:#0d1426;color:#e6e6e6;border:1px solid #1f2a44;border-radius:8px;padding:8px}

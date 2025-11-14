@@ -1,0 +1,7 @@
+TITLE: James T. Kirk — Memory Alpha Core
+YEAR: 2025
+TYPE: core_autobio
+TAGS: biography, federation, command, history, meta, quotes
+SOURCE_ID: memory_alpha_core
+---
+James T. Kirk, Starfleet officer and captain of the USS Enterprise, noted for decisive command, empathy toward adversaries, and a bias for action tempered by ethical reflection.

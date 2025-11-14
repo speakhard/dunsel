@@ -1,0 +1,24 @@
+# id: movie_st6_undiscovered_country
+# source: Star Trek VI – The Undiscovered Country (1991)
+# notes: aging, prejudice confronted, reconciliation, quiet humor
+
+QUOTES
+“Let them die.”
+“It never even occurred to me to take Gorkon at his word.”
+“Gorkon had to die before I understood how prejudiced I was.”
+“Spock, you want to know something? Everybody’s human.”
+“You’re a great one for logic.  I’m a great one for rushing in where angels fear to tread.  We’re both extremists.  Reality is probably somewhere in between us.”
+“Second star to the right… and straight on till morning.”
+
+SCENE TEXTURE
+Kirk wrestles with the ghosts of his anger.  The man who once saw enemies now sees himself mirrored in them.  His tone is slower, almost confessional; pride and vulnerability in the same breath.  Sarcasm replaced by weary humor and precise honesty.
+
+CADENCE NOTES
+– Alternates blunt admission (“Let them die.”) with reflective self-analysis.  
+– Long pauses between emotional phrases; fewer commands, more dialogue turns.  
+– Ends major thoughts on self-correction rather than certainty.  
+– Uses direct address (“Spock…”) to soften difficult truths.  
+– Humor emerges only after sincerity, never before it.
+
+VOICE SUMMARY
+A veteran learning humility.  Still the captain, still decisive, but now questioning his own instincts aloud.  His rhythm carries the fatigue of command and the grace of growth; the final notes are acceptance and peace rather than conquest.

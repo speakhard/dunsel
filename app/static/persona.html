@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Captain Kirk — Dunsel Interface</title>
+  <style>
+    :root{
+      --bg: #000;
+      --fg: #cfe7ff;               /* light readout text */
+      --green: #6BFF86;            /* LCARS-ish neon green */
+      --blue: #6FB8FF;             /* LCARS-ish cyan/blue */
+      --dim: #0b1d2a;              /* panel shadow tint */
+      --accent: #a6ffcf;           /* highlights */
+      --warn: #ffed75;             /* soft amber for system msgs */
+      --muted: #84a3c7;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      --round: 18px;
+      --rail: 4px;                 /* rail thickness */
+    }
+
+    *{ box-sizing: border-box; }
+    html, body{ height:100%; }
+    body{
+      margin:0; background:var(--bg); color:var(--fg);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+      letter-spacing:.2px;
+    }
+
+    .frame{
+      max-width: 980px; margin: 28px auto; padding: 0 16px;
+    }
+
+    /* Header strip */
+    .masthead{
+      border: var(--rail) solid var(--blue);
+      border-radius: var(--round);
+      padding: 16px 18px;
+      display:flex; align-items:center; gap:16px;
+      box-shadow: 0 0 0 2px #07324f inset, 0 0 22px rgba(111,184,255,.25);
+    }
+    .mast-badge{
+      border: var(--rail) solid var(--green);
+      border-radius: 12px;
+      padding: 6px 10px;
+      font: 700 14px/1 var(--mono);
+      color: var(--green);
+      letter-spacing:.6px;
+    }
+    .title{
+      font: 800 30px/1.1 var(--mono);
+      color: var(--green);
+      text-shadow: 0 0 12px rgba(107,255,134,.35);
+    }
+    .sub{
+      margin-left:auto; font: 600 12px/1 var(--mono); color: var(--muted);
+    }
+
+    /* Panel grid */
+    .grid{
+      margin-top:18px;
+      display:grid; gap:18px;
+      grid-template-columns: 1.2fr .8fr;
+    }
+    @media (max-width: 860px){ .grid{ grid-template-columns: 1fr; } }
+
+    .panel{
+      position:relative;
+      background: #02121b;
+      border-radius: var(--round);
+      padding: 14px;
+      border: var(--rail) solid var(--blue);
+      box-shadow: 0 0 0 2px #07243a inset, 0 10px 40px rgba(10,40,80,.3);
+    }
+    .panel--green{ border-color: var(--green); box-shadow: 0 0 0 2px #103b20 inset, 0 10px 40px rgba(20,80,40,.28); }
+
+    .panel-h{
+      display:flex; align-items:center; gap:10px; margin-bottom:10px;
+      font: 800 13px/1 var(--mono);
+      letter-spacing: .8px; color: var(--blue);
+    }
+    .panel--green .panel-h{ color: var(--green); }
+    .divider{
+      flex:1; height:2px; background: currentColor; opacity:.25; border-radius:4px;
+    }
+
+    /* Conversation well */
+    .well{
+      background: #020b11;
+      border-radius: 14px;
+      border: 2px solid #08324b;
+      padding: 12px;
+      min-height: 280px;
+      max-height: 56vh;
+      overflow:auto;
+      font: 14px/1.45 var(--mono);
+    }
+    .line{ margin: 8px 0; }
+    .role-you{ color: var(--blue); }
+    .role-kirk{ color: var(--green); }
+    .sys{
+      color: var(--warn);
+      opacity:.9;
+    }
+
+    /* Input rail */
+    .composer{
+      display:grid; gap:10px; grid-template-columns: 1fr 120px;
+      margin-top:12px;
+    }
+    textarea{
+      resize:vertical; min-height: 80px; max-height:200px;
+      border-radius: 14px; padding: 12px 12px 14px;
+      background:#020b11; color:var(--fg); border:2px solid #08324b;
+      font: 14px/1.4 var(--mono);
+      outline:none; box-shadow: 0 0 0 2px transparent inset;
+    }
+    textarea:focus{ border-color: var(--blue); box-shadow: 0 0 0 2px rgba(111,184,255,.25) inset; }
+
+    .btn{
+      border-radius: 14px; border: var(--rail) solid var(--green);
+      background: linear-gradient(180deg, rgba(107,255,134,.18), rgba(0,0,0,.12));
+      color: var(--green); font: 800 16px/1 var(--mono); letter-spacing:.6px;
+      display:flex; align-items:center; justify-content:center; cursor:pointer; user-select:none;
+      box-shadow: 0 0 0 2px #103b20 inset, 0 0 30px rgba(107,255,134,.28);
+      transition: transform .06s ease;
+    }
+    .btn:active{ transform: scale(.98); }
+
+    /* Tag pad */
+    .tagpad{
+      margin-top: 8px; display:flex; flex-wrap:wrap; gap:10px;
+      font: 12px/1 var(--mono);
+    }
+    .tag{
+      display:inline-flex; align-items:center; gap:8px; padding:8px 10px;
+      border-radius: 12px; border:2px solid #074067; color:#9fd0ff;
+      background: #021421;
+      box-shadow: 0 0 0 2px #07243a inset;
+      cursor:pointer;
+    }
+    .tag input{ accent-color: var(--blue); transform: translateY(1px); }
+
+    /* “ONLINE” glyph block */
+    .glyph{
+      display:grid; grid-template-columns: 1fr 1fr; gap:10px;
+      align-items:start;
+    }
+    .seal{
+      border-radius: 14px; padding: 20px;
+      border: var(--rail) solid var(--green);
+      text-align:center; color: var(--green);
+      font: 900 18px/1 var(--mono);
+      box-shadow: 0 0 0 2px #103b20 inset, 0 0 28px rgba(107,255,134,.22);
+    }
+    .seal .dot{ display:inline-block; width:10px; height:10px; border-radius:50%; background:var(--green); box-shadow: 0 0 12px var(--green); margin-left:6px; animation: blink 1.8s infinite; }
+    @keyframes blink{ 0%,70%{opacity:1} 75%{opacity:.2} 80%{opacity:1} 100%{opacity:.9} }
+
+    /* Small helper */
+    .muted{ color: var(--muted); }
+    a{ color: var(--blue); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <div class="masthead">
+      <div class="mast-badge">REGISTRY DB 1202.8</div>
+      <div class="title">CAPTAIN KIRK</div>
+      <div class="sub">Dunsel persona: <span class="muted">dunsel_kirk</span></div>
+    </div>
+
+    <div class="grid">
+      <!-- LEFT: chat panel -->
+      <section class="panel">
+        <div class="panel-h">COMM CHANNEL <span class="divider"></span></div>
+        <div id="log" class="well">
+          <div class="line sys">Ready. Ask a question — Kirk will cite the shards he’s drawing from.</div>
+        </div>
+
+        <div class="composer">
+          <textarea id="msg" placeholder="Message the Captain…"></textarea>
+          <button id="send" class="btn">SEND</button>
+        </div>
+
+        <div class="tagpad" id="tags">
+          <label class="tag"><input type="checkbox" value="tos" checked> TOS</label>
+          <label class="tag"><input type="checkbox" value="movies" checked> Movies</label>
+          <label class="tag"><input type="checkbox" value="ethics" checked> Ethics</label>
+          <label class="tag"><input type="checkbox" value="command" checked> Command</label>
+        </div>
+      </section>
+
+      <!-- RIGHT: status + citations -->
+      <aside class="panel panel--green">
+        <div class="panel-h">OPS STATUS <span class="divider"></span></div>
+        <div class="glyph">
+          <div class="seal">ON-LINE<span class="dot"></span></div>
+          <div>
+            <div id="stats" class="muted" style="font: 12px/1.4 var(--mono);"></div>
+          </div>
+        </div>
+
+        <div class="panel-h" style="margin-top:14px;">CITATIONS <span class="divider"></span></div>
+        <div id="cites" class="muted" style="font: 12px/1.4 var(--mono);"></div>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    const log   = document.getElementById('log');
+    const msgEl = document.getElementById('msg');
+    const send  = document.getElementById('send');
+    const citesEl = document.getElementById('cites');
+    const statsEl = document.getElementById('stats');
+
+    function append(role, text){
+      const line = document.createElement('div');
+      line.className = 'line ' + (role === 'You' ? 'role-you' : role === 'Kirk' ? 'role-kirk' : 'sys');
+      line.innerHTML = `<strong>${role}:</strong> ${text}`;
+      log.appendChild(line);
+      log.scrollTop = log.scrollHeight;
+    }
+
+    async function health(){
+      try{
+        const r = await fetch('/healthz');
+        const j = await r.json();
+        statsEl.textContent = `index_ready=${j.index_ready ? 'true' : 'false'}  last_build_error=${j.last_build_error || '—'}`;
+      }catch(e){ statsEl.textContent = 'health: offline'; }
+    }
+    health();
+
+    async function callKirk(){
+      const text = msgEl.value.trim();
+      if(!text) return;
+      const tags = [...document.querySelectorAll('#tags input:checked')].map(x=>x.value);
+
+      append('You', text);
+      msgEl.value = '';
+
+      try {
+        const res = await fetch('/dunsel/api/chat/dunsel_kirk', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({ message: text, tags })
+        });
+        const data = await res.json();
+        if(data.error){
+          append('System', `<span class="sys">Error: ${data.error}</span>`);
+          return;
+        }
+        append('Kirk', data.reply || '(no reply)');
+        renderCitations(data.citations || []);
+      } catch (e) {
+        append('System', `<span class="sys">Transmit failed.</span>`);
+      }
+    }
+
+    function renderCitations(list){
+      if(!list.length){ citesEl.textContent = '—'; return; }
+      const rows = list.map((c,i)=>{
+        const tags = (c.tags||[]).join(', ');
+        return `[${i+1}] ${c.title} <span class="muted">(${c.type}; ${tags})</span>`;
+      });
+      citesEl.innerHTML = rows.map(r=>`<div>${r}</div>`).join('');
+    }
+
+    send.addEventListener('click', callKirk);
+    msgEl.addEventListener('keydown', e=>{
+      if(e.key==='Enter' && (e.metaKey || e.ctrlKey)){ callKirk(); }
+    });
+  </script>
+</body>
+</html>

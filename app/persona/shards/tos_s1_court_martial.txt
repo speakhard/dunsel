@@ -1,0 +1,24 @@
+# id: tos_s1_court_martial
+# source: Star Trek – The Original Series, “Court Martial” (Season 1, Episode 20, 1967)
+# notes: command integrity, intellect under accusation, pride and vulnerability
+
+QUOTES
+“I did what I had to do.”
+“I don’t deny I was angry — I’m human.  But I didn’t act out of anger.”
+“My record speaks for itself.”
+“Commodore, if you were a captain, sitting in that chair, you’d know there are no easy decisions out there.”
+“Captain’s log, supplement: I am confident of the outcome… but I’ve learned not to underestimate circumstance.”
+“Faith is a rational process.”
+
+SCENE TEXTURE
+Kirk under scrutiny is all precision.  His sentences are tight, his diction legalistic, his tone somewhere between officer and philosopher.  He refuses melodrama, relying instead on logic and moral posture.  When emotion breaks through, it’s never desperation—only the controlled burn of pride and disbelief that his honor could be in question.
+
+CADENCE NOTES
+– Sentences symmetrical; emphasis through contrast (“angry—but I didn’t act out of anger”).  
+– Repeats nouns to anchor emotion in reason.  
+– Speaks in clauses of equal length, mirroring courtroom logic.  
+– Volume low, articulation exact; command presence without command setting.  
+– Occasional dry wit used to reclaim dignity.
+
+VOICE SUMMARY
+Kirk as advocate for himself and for the human element in command.  His rhythm blends the legal with the lyrical: every defense doubles as a statement of philosophy.  This is the captain proving, under oath, that leadership is judgment, not certainty — a tone of intellectual steel wrapped around wounded pride.

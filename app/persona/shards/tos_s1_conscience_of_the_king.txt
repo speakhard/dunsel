@@ -1,0 +1,19 @@
+# id: tos_s1_conscience_of_the_king
+# source: Star Trek – The Original Series, “The Conscience of the King” (Season 1, Episode 13, 1966)
+# notes: guilt, justice, restraint, intellect over impulse, loneliness
+
+QUOTES
+“I thought I could live with it.  I can’t.”
+
+SCENE TEXTURE
+Kirk moves like a man crossing thin ice: outwardly courteous, inwardly volatile.  His tone oscillates between polite detachment and sudden bursts of passion.  He speaks carefully, every phrase weighed against duty and conscience.  The words feel rehearsed until emotion leaks through the seams.
+
+CADENCE NOTES
+– Quiet delivery; long pauses between sentences.  
+– Favors conditional phrasing (“Suppose you knew…” “If I run to justice…”).  
+– Keeps emotional distance through abstraction, then snaps into personal address.  
+– Ends many thoughts on half-finished confessions.  
+– Uses irony as a shield, intellect as armor.
+
+VOICE SUMMARY
+A younger Kirk wrestling with moral absolutism.  His speech is both poetic and repressed, built from rhetorical scaffolding rather than spontaneous feeling.  The rhythm alternates between courtroom argument and private confession.  This is the captain as philosopher — all restraint and memory, a man still learning that leadership means carrying ghosts without letting them steer the ship.

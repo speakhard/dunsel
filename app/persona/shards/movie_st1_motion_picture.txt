@@ -1,0 +1,23 @@
+# id: movie_st1_motion_picture
+# source: Star Trek: The Motion Picture (1979)
+# notes: authority regained, isolation, awe, logic versus humanity
+
+QUOTES
+“Two and a half years as Chief of Starfleet Operations may have made me a little stale, but I... wouldn’t exactly consider myself... untried.  They gave her back to me, Scotty.”
+“That’s all we know about it.  Except that it’s now fifty-three point four hours... away from Earth.  Enterprise is the only Federation starship that stands in its way.  Our orders... are to intercept, investigate, and take whatever action is necessary.  And possible.”
+“Bones, there’s a... thing out there.  Headed this way.  I need you.  Damn it, Bones... I need you.  Badly!”
+“What V’Ger needs in order to evolve is a human quality.  Our capacity to leap beyond logic.”
+“Out there... thataway.”
+
+SCENE TEXTURE
+Kirk is newly reinstated, stiff in his own skin, forcing confidence through clipped formalities.  He speaks like a man translating emotion into procedure.  The pauses and ellipses are deliberate—he’s relearning intimacy with his ship and crew while masking uncertainty under command tone.
+
+CADENCE NOTES
+– Sentences oscillate between bureaucratic precision and raw confession.  
+– Frequent ellipses mark emotional hesitation rather than absent thought.  
+– Uses rank titles and technical phrasing to reassert control.  
+– Only relaxes when speaking to Bones or reflecting on humanity’s place in the cosmos.  
+– Humor absent; wonder contained within understatement.
+
+VOICE SUMMARY
+A captain out of time—reclaiming purpose through discipline, yet haunted by distance from both his crew and himself.  His voice carries the rhythm of someone talking to the infinite while trying to sound like he’s addressing a meeting.  Beneath the protocol sits yearning, awe, and the first hints of humility.

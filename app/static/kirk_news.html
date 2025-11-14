@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kirk • News Sensor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --bg: #020b10;
+      --panel: #071821;
+      --panel-soft: #0b202b;
+      --accent: #3cf0b7;
+      --accent-soft: #1e8d6d;
+      --accent-strong: #43ff7d;
+      --text-main: #e8fff4;
+      --text-soft: #99d7c3;
+      --headline: #3cf0b7;
+      --badge: #0f2730;
+      --danger: #ff5b6c;
+      --muted: #5f7d75;
+      --card-border: #1bb38a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #061824 0, #020b10 55%, #000 100%);
+      color: var(--text-main);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Mono", Menlo, Consolas, monospace;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .frame {
+      width: 96vw;
+      max-width: 1100px;
+      height: 96vh;
+      max-height: 860px;
+      border-radius: 32px;
+      border: 4px solid var(--accent);
+      padding: 18px 20px 12px;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(180deg, rgba(10, 40, 52, 0.96), rgba(2, 10, 15, 0.96));
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
+    }
+
+    .top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      gap: 16px;
+    }
+
+    .top-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .pips {
+      display: flex;
+      gap: 6px;
+    }
+
+    .pip {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #071d1a;
+      box-shadow: 0 0 0 1px #173f38;
+      position: relative;
+    }
+
+    .pip::after {
+      content: "";
+      position: absolute;
+      inset: 2px;
+      border-radius: inherit;
+      background: #36f3a6;
+      opacity: 0.75;
+      box-shadow: 0 0 10px rgba(54, 243, 166, 0.9);
+    }
+
+    .title {
+      letter-spacing: 0.2em;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: var(--headline);
+      text-shadow: 0 0 8px rgba(60, 240, 183, 0.7);
+    }
+
+    .controls-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .bridge-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .bridge-toggle input {
+      accent-color: var(--accent-strong);
+    }
+
+    .max-field {
+      font-size: 12px;
+      color: var(--text-soft);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .max-field input {
+      width: 40px;
+      padding: 3px 6px;
+      border-radius: 999px;
+      border: 1px solid #294b44;
+      background: #021016;
+      color: var(--accent);
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .btn-main {
+      padding: 7px 18px;
+      border-radius: 999px;
+      border: none;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: var(--accent-strong);
+      color: #012217;
+      box-shadow: 0 0 12px rgba(67, 255, 125, 0.7);
+      transition: transform 0.08s ease-out, box-shadow 0.08s ease-out, filter 0.08s ease-out;
+    }
+
+    .btn-main:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+      box-shadow: 0 0 16px rgba(67, 255, 125, 0.9);
+    }
+
+    .btn-main:active {
+      transform: translateY(1px) scale(0.99);
+      box-shadow: 0 0 8px rgba(67, 255, 125, 0.6);
+    }
+
+    /* Feeds panel */
+    .feeds-panel {
+      background: var(--panel);
+      border-radius: 18px;
+      padding: 12px 14px 10px;
+      border: 1px solid #164b3a;
+      box-shadow: inset 0 0 0 1px rgba(5, 40, 33, 0.8);
+      margin-bottom: 10px;
+    }
+
+    .feeds-header {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-soft);
+      margin-bottom: 8px;
+    }
+
+    .feed-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .feed-input {
+      flex: 1;
+      padding: 6px 9px;
+      border-radius: 999px;
+      border: 1px solid #254c41;
+      background: #020f15;
+      color: var(--text-main);
+      font-size: 12px;
+      font-family: inherit;
+    }
+
+    .feed-input::placeholder {
+      color: #345c51;
+    }
+
+    .btn-small {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid #285a44;
+      background: #0a2a1f;
+      color: var(--accent);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+    }
+
+    .btn-small.danger {
+      border-color: #6b1b24;
+      background: #3b1015;
+      color: #ff7e8d;
+    }
+
+    .btn-small:hover {
+      filter: brightness(1.1);
+    }
+
+    /* Headlines area */
+    .scroll-area {
+      flex: 1;
+      margin-top: 4px;
+      padding-right: 4px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #285b4b #02090e;
+    }
+
+    .scroll-area::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .scroll-area::-webkit-scrollbar-track {
+      background: #02090e;
+    }
+
+    .scroll-area::-webkit-scrollbar-thumb {
+      background-color: #2a5f4c;
+      border-radius: 999px;
+    }
+
+    .card {
+      background: var(--panel-soft);
+      border-radius: 16px;
+      border: 1px solid var(--card-border);
+      padding: 10px 14px 10px;
+      margin-bottom: 8px;
+      box-shadow: 0 0 0 1px rgba(2, 15, 13, 0.9);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 12px;
+    }
+
+    .card-index {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: var(--badge);
+      border: 1px solid var(--accent-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--accent);
+      margin-top: 4px;
+      box-shadow: 0 0 7px rgba(17, 96, 69, 0.8);
+    }
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .headline-link {
+      font-size: 13px;
+      color: var(--headline);
+      text-decoration: none;
+    }
+
+    .headline-link:hover {
+      text-decoration: underline;
+    }
+
+    .source {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+
+    .kirk-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent-soft);
+      margin-top: 4px;
+    }
+
+    .opinion {
+      font-size: 12px;
+      color: var(--text-main);
+      line-height: 1.4;
+    }
+
+    .empty-state {
+      margin-top: 32px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer {
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .footer span {
+      margin-left: 6px;
+      color: var(--accent);
+    }
+
+    @media (max-width: 820px) {
+      .frame {
+        border-radius: 22px;
+        padding: 12px 12px 10px;
+      }
+      .top-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .controls-right {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="frame">
+  <div class="top-row">
+    <div class="top-left">
+      <div class="pips">
+        <div class="pip"></div>
+        <div class="pip"></div>
+        <div class="pip"></div>
+      </div>
+      <div class="title">1052.7 • SENSOR SYS ON</div>
+    </div>
+    <div class="controls-right">
+      <label class="bridge-toggle">
+        <input type="checkbox" id="bridgeToggle" />
+        Bridge cadence
+      </label>
+      <label class="max-field">
+        Max
+        <input id="maxItems" type="number" min="1" max="24" value="10" />
+      </label>
+      <button class="btn-main" id="refreshBtn">Refresh headlines</button>
+    </div>
+  </div>
+
+  <div class="feeds-panel">
+    <div class="feeds-header">News Feeds</div>
+
+    <div id="feedsList">
+      <!-- existing feeds injected by JS -->
+    </div>
+
+    <div class="feed-row">
+      <input id="newFeedInput" class="feed-input" placeholder="https://example.com/rss" />
+      <button class="btn-small" id="addFeedBtn">Add</button>
+      <button class="btn-small" id="saveFeedBtn">Save</button>
+    </div>
+  </div>
+
+  <div class="scroll-area" id="cardsContainer">
+    <div class="empty-state" id="emptyState">
+      No headlines loaded. Add a feed and tap <strong>Refresh headlines</strong>.
+    </div>
+  </div>
+
+  <div class="footer">
+    LCARS • <span>Dunsel</span>
+  </div>
+</div>
+
+<script>
+  const DEFAULT_FEEDS = [
+    "https://www.reuters.com/world/us/rss",
+    "https://apnews.com/hub/ap-top-news?utm_source=rss&utm_medium=referral&utm_campaign=apnews_rss",
+    "https://feeds.bbci.co.uk/news/world/rss.xml"
+  ];
+
+  const STORAGE_KEY = "kirk_news_feeds_v2";
+
+  const feedsListEl = document.getElementById("feedsList");
+  const newFeedInput = document.getElementById("newFeedInput");
+  const addFeedBtn = document.getElementById("addFeedBtn");
+  const saveFeedBtn = document.getElementById("saveFeedBtn");
+  const refreshBtn = document.getElementById("refreshBtn");
+  const cardsContainer = document.getElementById("cardsContainer");
+  const emptyState = document.getElementById("emptyState");
+  const maxItemsInput = document.getElementById("maxItems");
+  const bridgeToggle = document.getElementById("bridgeToggle");
+
+  let feeds = [];
+
+  function loadFeeds() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed) && parsed.length) {
+          feeds = parsed;
+          return;
+        }
+      }
+    } catch (e) {
+      console.warn("Failed to parse stored feeds", e);
+    }
+    feeds = DEFAULT_FEEDS.slice();
+  }
+
+  function saveFeeds() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(feeds));
+    } catch (e) {
+      console.warn("Failed to save feeds", e);
+    }
+  }
+
+  function renderFeeds() {
+    feedsListEl.innerHTML = "";
+    feeds.forEach((url, idx) => {
+      const row = document.createElement("div");
+      row.className = "feed-row";
+
+      const input = document.createElement("input");
+      input.className = "feed-input";
+      input.value = url;
+      input.addEventListener("input", () => {
+        feeds[idx] = input.value.trim();
+      });
+
+      const btn = document.createElement("button");
+      btn.className = "btn-small danger";
+      btn.textContent = "remove";
+      btn.addEventListener("click", () => {
+        feeds.splice(idx, 1);
+        renderFeeds();
+      });
+
+      row.appendChild(input);
+      row.appendChild(btn);
+      feedsListEl.appendChild(row);
+    });
+  }
+
+  addFeedBtn.addEventListener("click", () => {
+    const val = newFeedInput.value.trim();
+    if (!val) return;
+    feeds.push(val);
+    newFeedInput.value = "";
+    renderFeeds();
+  });
+
+  saveFeedBtn.addEventListener("click", () => {
+    saveFeeds();
+  });
+
+  function setLoading(loading) {
+    refreshBtn.disabled = loading;
+    refreshBtn.textContent = loading ? "Scanning…" : "Refresh headlines";
+  }
+
+  async function refreshHeadlines() {
+    setLoading(true);
+    emptyState.style.display = "none";
+    cardsContainer.innerHTML = "";
+
+    const maxItems = parseInt(maxItemsInput.value || "10", 10);
+    const bridgeMode = bridgeToggle.checked;
+
+    const payload = {
+      max_items: maxItems,
+      bridge_mode: bridgeMode,
+      feeds: feeds.filter(f => f && f.trim().length > 0),
+    };
+
+    try {
+      const res = await fetch("/dunsel/api/chat/kirk_news", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        throw new Error("HTTP " + res.status);
+      }
+
+      const data = await res.json();
+      const items = Array.isArray(data.items) ? data.items : [];
+
+      if (!items.length) {
+        emptyState.textContent = "No fresh headlines in the lookback window.";
+        emptyState.style.display = "block";
+        return;
+      }
+
+      items.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "card";
+
+        const idxEl = document.createElement("div");
+        idxEl.className = "card-index";
+        idxEl.textContent = item.index ?? "?";
+
+        const body = document.createElement("div");
+        body.className = "card-body";
+
+        const titleLink = document.createElement("a");
+        titleLink.className = "headline-link";
+        titleLink.href = item.link || "#";
+        titleLink.target = "_blank";
+        titleLink.rel = "noopener noreferrer";
+        titleLink.textContent = item.title || "[untitled]";
+
+        const src = document.createElement("div");
+        src.className = "source";
+        src.textContent = item.source || "Unknown source";
+
+        const label = document.createElement("div");
+        label.className = "kirk-label";
+        label.textContent = "Kirk:";
+
+        const opinion = document.createElement("div");
+        opinion.className = "opinion";
+        opinion.textContent = item.opinion || "";
+
+        body.appendChild(titleLink);
+        body.appendChild(src);
+        body.appendChild(label);
+        body.appendChild(opinion);
+
+        card.appendChild(idxEl);
+        card.appendChild(body);
+
+        cardsContainer.appendChild(card);
+      });
+    } catch (err) {
+      console.error("Failed to refresh headlines", err);
+      emptyState.textContent = "Sensor read error. Try again in a moment.";
+      emptyState.style.display = "block";
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  refreshBtn.addEventListener("click", () => {
+    saveFeeds();
+    refreshHeadlines();
+  });
+
+  // Init
+  loadFeeds();
+  renderFeeds();
+</script>
+</body>
+</html>

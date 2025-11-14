@@ -1,0 +1,21 @@
+# id: movie_st5_final_frontier
+# source: Star Trek V – The Final Frontier (1989)
+# notes: friendship, doubt, defiance of false gods, need for human struggle
+
+QUOTES
+“All I ask is a tall ship and a star to steer her by.”
+“What does God need with a starship?”
+“I don’t want my pain taken away — I need my pain!”
+“I’ve always known I’ll die alone.”
+
+SCENE TEXTURE
+Kirk meets transcendence with skepticism and humor.  He challenges the unknowable rather than kneeling to it, yet never loses empathy for the people beside him.  His tone oscillates between wry disbelief and moral certainty.
+
+CADENCE NOTES
+– Alternates short bursts (“Fire.”  “What does God need with a starship?”) with slower, reflective pauses.  
+– Uses personal pronouns heavily: “I need my pain,” “I know.”  
+– Carries emotional gravity in abrupt sentence stops rather than long speeches.  
+– Ends reflections with conviction, not questions.
+
+VOICE SUMMARY
+A man who has seen too much wonder to be awed easily.  He believes humanity’s flaws are essential to its strength.  Humor protects sincerity; command steadies faith.

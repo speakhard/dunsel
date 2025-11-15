@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 from typing import List, Optional
+from .utils.kosh_headline import preprocess_headline_for_kosh, infer_tag_from_text
 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -213,29 +214,34 @@ async def chat_dunsel_kirk(req: ChatRequest):
 # -------------------------------------------------------------------
 
 @app.post("/dunsel/api/chat/dunsel_kosh_news")
-async def chat_dunsel_kosh_news(req: ChatRequest):
-    """
-    Kosh persona endpoint: comments on news & gossip with short, weighty responses.
-    """
+async def chat_kosh_news(request: ChatRequest):
+    raw_message = request.message or ""
+    incoming_tags = request.tags or []
 
-    persona_text = load_persona("kosh")
-    messages = build_messages(
-        persona_text=persona_text,
-        user_message=req.message,
-        tags=req.tags,
-        user_name=req.user_name,
-        persona_name="Kosh Naranek",
+    # 1) Clean the headline / blurb for Vorlon-friendly structure
+    clean_headline = preprocess_headline_for_kosh(raw_message)
+
+    # 2) Decide what to send as the actual "message" to Kosh
+    # Prefer the cleaned version, but fall back to raw if we somehow stripped everything.
+    final_message = clean_headline or raw_message.strip()
+
+    # 3) Ensure we have at least one tag:
+    #    - Use existing tags if present
+    #    - Otherwise infer from the cleaned headline
+    tags = list(incoming_tags)
+    if not tags:
+        inferred = infer_tag_from_text(final_message)
+        tags = [inferred]
+
+    persona = load_persona("kosh")  # whatever your existing loading function is
+
+    # 4) Call your existing OpenAI chat wrapper with the preprocessed message & tags
+    reply, citations = await run_chat_with_persona(
+        persona=persona,
+        message=final_message,
+        tags=tags,
+        user_name=request.user_name or "User",
     )
 
-    completion = client.chat.completions.create(
-        model=MODEL,
-        messages=messages,
-        temperature=0.5,  # Kosh should be fairly stable and consistent
-        max_tokens=200,
-    )
+    return {"reply": reply, "citations": citations}
 
-    reply = completion.choices[0].message.content.strip()
-    return {
-        "reply": reply,
-        "citations": [],
-    }
